@@ -1,0 +1,79 @@
+/* 覆盖原有CSS */
+.mui-input-row label{
+	line-height: 1;
+	cursor: hand;
+}
+/*
+实现方框选择
+*/
+.mui-checkbox.mui-left {
+	left: 16px;
+}
+.mui-checkbox.mui-left label{
+    padding-right: 15px;
+    padding-left: 44px;
+}
+.mui-checkbox input[type=checkbox]{
+    top: 7px;
+}
+.mui-checkbox input[type=checkbox]::before{
+	box-sizing: border-box;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 14px;
+	height: 14px;
+	outline:2px solid blue;
+	border: 2px solid #fff;
+	background-color: #fff;
+	transition: background-color .2s;
+}
+.mui-checkbox input[type=checkbox]:checked::before{
+	content: "";
+	border: 2px solid #fff;
+	background-color: blue;
+}
+/*
+======方框选择结束
+*/
+body{
+	background-color: #fff;
+}
+.container{
+	background-color: #fff;
+	color: #000;
+	font-family: 'Helvetica Neue',Helvetica,sans-serif;
+	line-height: 1.5;
+	margin-top: 20px;
+	padding: 10px;
+}
+.container p{
+	color: inherit;
+	line-height: 1.5;
+	font-size: 17px;
+}
+.container p.a2{
+	text-indent: 2em;
+}
+.container .speech input{
+	margin-left: 60px;
+	width: 80%;
+}
+.container .speech.hide{
+	display: none;
+}
+.container .submitC{
+	margin-top: 20px;
+	text-align: center;
+}
+.container #submit{
+	width: 60%;
+	border-radius: 10px;
+}
+
+/* 首页部分 */
+
+
+
+
+/* ------------------------首页部分 */

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/my.css"/>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">信息采集</h1>
+	</header>
+	<div class="mui-content container">
+		<p>亲爱的同学：</p>
+		<p class="a2">你好，欢迎加入浙江邮电职业技术学院职业技术学院大家庭，先请你选择报考我校的原因（可以多选）：</p>
+		<div class="result">
+			<form action="" method="post">
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>学校品牌</label>
+			  <input name="reason" value="学校品牌" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>专业爱好</label>
+			  <input name="reason" value="专业爱好" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>就业优势</label>
+			  <input name="reason" value="就业优势" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>技能培养</label>
+			  <input name="reason" value="专业爱好" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>地理位置</label>
+			  <input name="reason" value="地理位置" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>他人推荐</label>
+			  <input name="reason" value="他人推荐" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>其他</label>
+			  <input name="reason" value="其他" class="other" type="checkbox">
+			</div>
+			<div class="mui-input-row speech hide">
+				<input type="text" class="mui-input-speech mui-input-clear detail" placeholder="语音输入具体原因">
+			</div>
+			<div class="mui-input-row submitC">
+				<input type="submit" name="submit" id="submit" value="提交" />
+			</div>
+			</form>
+		</div>
+		
+	</div>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		//启动mui
+		mui.init();
+		//实现选择
+		let other=document.querySelector(".other");
+		let speech=document.querySelector(".speech");
+		let detail=document.querySelector(".detail");
+		let submit=document.querySelector("#submit");
+		other.addEventListener("change",function(){
+			speech.classList.toggle('hide');
+		})
+		submit.addEventListener("click",function(){
+			event.preventDefault();
+			let reasons=[];
+			let oChecked=document.querySelectorAll(".container input:checked");
+			for(let i=0;i<oChecked.length;i++){
+				reasons.push(oChecked[i].value);
+			}
+			let reasonDetail=detail.value;
+			
+			if(reasons.length==0){
+				mui.toast("不能为空！")
+			}else{
+				console.log(reasons,reasonDetail);
+				//mui.ajax("abc.jsp");
+				mui.openWindow({url:'index.html'});
+			}
+		});
+	</script>
+</body>
+</html>
